@@ -1,0 +1,32 @@
+﻿@model IEnumerable<FluentSchedule.R.Models.ScheduleModel>
+
+<table class="table table-bordered taskContainer">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Task Name</th>
+            <th>Task Next Run Time</th>
+            <th>Task State</th>
+        </tr>
+    </thead>
+    @foreach (var scheduleModel in Model) {
+        <tr>
+            <td><a href="javascript:void(0)" data-task-name="@scheduleModel.Name" class="task-invoker">
+                <img src="~/Content/images/run.png" alt="Run Immediately" height="24" width="24" /></a>
+                | <a href="javascript:void(0)" data-task-name="@scheduleModel.Name" class="task-remove">
+                    <img src="~/Content/images/remove.png" alt="Remove Task" height="24" width="24" /></a>
+            </td>
+            <td>@scheduleModel.Name</td>
+            <td>@scheduleModel.NextRunTime</td>
+            <td data-task-name="@scheduleModel.Name">
+                <span class="task-execution-message">@scheduleModel.Status</span>
+                <div class="task-execution-loader" style="float: right; display: none">
+                    <img height="24" width="24" src="~/Content/images/loader.gif" />
+                </div>
+                <div class="task-execution-success" style="float: right; display: none">
+                    <img height="24" width="24" src="~/Content/images/ok.png" />
+                </div>
+            </td>
+        </tr>
+    }
+</table>
