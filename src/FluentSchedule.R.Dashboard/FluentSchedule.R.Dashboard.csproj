@@ -180,7 +180,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FluentScheduleR\FluentSchedule.R.csproj">
+    <ProjectReference Include="..\FluentSchedule.R\FluentSchedule.R.csproj">
       <Project>{3AF1841E-7E23-4647-92F6-20703CAE60C9}</Project>
       <Name>FluentSchedule.R</Name>
     </ProjectReference>
