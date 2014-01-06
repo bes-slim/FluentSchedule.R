@@ -8,6 +8,7 @@ namespace FluentSchedule.R.Infrastructure
         public static TaskManagerPageModel ToPageModel(this Schedule[] schedules)
         {
             var result = new TaskManagerPageModel();
+
             foreach (Schedule schedule in schedules)
             {
                 result.Schedules.Add(schedule.ToTaskModel());

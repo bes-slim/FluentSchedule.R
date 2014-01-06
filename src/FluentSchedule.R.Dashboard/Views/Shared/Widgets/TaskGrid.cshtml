@@ -4,17 +4,21 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Task Name</th>
-            <th>Task Next Run Time</th>
-            <th>Task State</th>
+            <th>Name</th>
+            <th>Next Run Time</th>
+            <th>State</th>
         </tr>
     </thead>
-    @foreach (var scheduleModel in Model) {
+    @foreach (var scheduleModel in Model)
+    {
         <tr>
-            <td><a href="javascript:void(0)" data-task-name="@scheduleModel.Name" class="task-invoker">
-                <img src="~/Content/images/run.png" alt="Run Immediately" height="24" width="24" /></a>
+            <td>
+                <a href="javascript:void(0)" data-task-name="@scheduleModel.Name" class="task-invoker">
+                    <img src="~/Content/images/run.png" alt="Run Immediately" height="24" width="24" />
+                </a>
                 | <a href="javascript:void(0)" data-task-name="@scheduleModel.Name" class="task-remove">
-                    <img src="~/Content/images/remove.png" alt="Remove Task" height="24" width="24" /></a>
+                    <img src="~/Content/images/remove.png" alt="Remove Task" height="24" width="24" />
+                </a>
             </td>
             <td>@scheduleModel.Name</td>
             <td>@scheduleModel.NextRunTime</td>
