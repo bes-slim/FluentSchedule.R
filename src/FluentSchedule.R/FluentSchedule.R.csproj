@@ -65,7 +65,9 @@
     <Compile Include="Infrastructure\ITaskRepository.cs" />
     <Compile Include="Infrastructure\RealTimeTask.cs" />
     <Compile Include="Infrastructure\ScheduleExtensions.cs" />
+    <Compile Include="Infrastructure\TaskBase.cs" />
     <Compile Include="Infrastructure\TaskRepository.cs" />
+    <Compile Include="IRealtimeTaskEngine.cs" />
     <Compile Include="Models\ScheduleModel.cs" />
     <Compile Include="Models\TasksPageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

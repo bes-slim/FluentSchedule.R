@@ -2,9 +2,12 @@
 using FluentSchedule.R.Dashboard.Infrastructure.Tasks;
 using FluentScheduler.Model;
 
-namespace FluentSchedule.R.Dashboard.App_Start {
-    public class TaskSchedulerConfig {
-        public static void RegisterTasks() {
+namespace FluentSchedule.R.Dashboard
+{
+    public class TaskSchedulerConfig
+    {
+        public static void RegisterTasks()
+        {
 
             RealtimeTaskEngine.Instance
                 .InitRegistry(new TaskRegistry())
@@ -13,7 +16,8 @@ namespace FluentSchedule.R.Dashboard.App_Start {
                 .HandleErrorWith(TaskManager_UnobservedTaskException);
         }
 
-        static void TaskManager_UnobservedTaskException(TaskExceptionInformation sender, UnhandledExceptionEventArgs e) {
+        static void TaskManager_UnobservedTaskException(TaskExceptionInformation sender, UnhandledExceptionEventArgs e)
+        {
             //Log..
         }
     }

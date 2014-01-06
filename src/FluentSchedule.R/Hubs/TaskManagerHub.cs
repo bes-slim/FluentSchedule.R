@@ -11,16 +11,19 @@ namespace FluentSchedule.R.Hubs
         public void RunScheduleImmediately(string scheduleName)
         {
             Schedule schedule = TaskManager.GetSchedule(scheduleName);
+
             if (schedule != null)
                 schedule.Execute();
         }
+
         public void DeleteTaskImmediately(string scheduleName)
         {
             Schedule schedule = TaskManager.GetSchedule(scheduleName);
+
             if (schedule != null)
             {
                 TaskManager.RemoveTask(scheduleName);
-                Clients.All.TaskRemoved(new { task = scheduleName });
+                Clients.All.TaskRemoved(new {task = scheduleName});
             }
         }
     }
