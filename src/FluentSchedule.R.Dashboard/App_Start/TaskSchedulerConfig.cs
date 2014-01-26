@@ -1,5 +1,6 @@
 ﻿using System;
 using FluentSchedule.R.Dashboard.Infrastructure.Tasks;
+using FluentSchedule.R.Infrastructure;
 using FluentScheduler.Model;
 
 namespace FluentSchedule.R.Dashboard
@@ -10,15 +11,24 @@ namespace FluentSchedule.R.Dashboard
         {
 
             RealtimeTaskEngine.Instance
-                .InitRegistry(new TaskRegistry())
-                .TrackStart(new TrackOptions { HubMethod = "helloStart" }, information => new { message = "Task Started" + information.Name })
-                .TrackEnd(new TrackOptions { HubMethod = "helloEnd" }, information => new { message = "Task Ended" + information.Name })
+                .WithRegistry<TaskRegistry>()
+                .ForAll()
+                .OnStart(new TrackOptions { HubMethod = "taskExecuting" }, information => new ExecutionHandle
+                {
+                    message = "Execting " + information.Name,
+                    task = information.Name
+                })
+                .OnEnd(new TrackOptions { HubMethod = "taskExecuted" }, information => new ExecutionHandle
+                {
+                    message = "Executed..",
+                    task = information.Name
+                })
                 .HandleErrorWith(TaskManager_UnobservedTaskException);
         }
 
-        static void TaskManager_UnobservedTaskException(TaskExceptionInformation sender, UnhandledExceptionEventArgs e)
+        public static void TaskManager_UnobservedTaskException(TaskExceptionInformation sender, UnhandledExceptionEventArgs e)
         {
-            //Log..
+
         }
     }
 }

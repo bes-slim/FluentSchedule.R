@@ -3,11 +3,11 @@ using FluentSchedule.R.Infrastructure;
 
 namespace FluentSchedule.R.Dashboard.Infrastructure.Tasks
 {
-    public class SampleTask : TaskBase
+    public class BasicTask : TaskBase
     {
         public override void OnExecute()
         {
-            Debug.WriteLine("Sample task executed.");
+            Debug.WriteLine("Basic task executed.");
         }
     }
 }

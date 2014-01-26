@@ -1,11 +1,11 @@
-﻿using FluentSchedule.R.Models;
+﻿using FluentSchedule.R.Infrastructure;
 using FluentScheduler;
 
-namespace FluentSchedule.R.Infrastructure
+namespace FluentSchedule.R.Models
 {
     public class TaskRepository : ITaskRepository
     {
-        public TaskManagerPageModel Get()
+        public TasksViewModel Get()
         {
             return TaskManager.AllSchedules.ToPageModel();
         }

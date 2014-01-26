@@ -15,7 +15,7 @@
     <AssemblyName>FluentSchedule.R.Dashboard</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -129,9 +129,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\Tasks\HelloRealTimeTask.cs" />
-    <Compile Include="Infrastructure\Tasks\SampleTask.cs" />
-    <Compile Include="Infrastructure\Tasks\ScheduleNames.cs" />
+    <Compile Include="Infrastructure\Tasks\DoSomethingTask.cs" />
+    <Compile Include="Infrastructure\Tasks\HelloTask.cs" />
+    <Compile Include="Infrastructure\Tasks\BasicTask.cs" />
+    <Compile Include="Infrastructure\Tasks\TaskNames.cs" />
     <Compile Include="Infrastructure\Tasks\TaskRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,7 +175,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -203,7 +203,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61306/</IISUrl>
+          <IISUrl>http://localhost/fsdashboard</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

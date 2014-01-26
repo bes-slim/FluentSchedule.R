@@ -13,13 +13,15 @@ namespace FluentSchedule.R.Infrastructure
             HostingEnvironment.RegisterObject(this);
         }
 
-
         public void Execute()
         {
             lock (_lock)
             {
                 if (_shuttingDown)
+                {
                     return;
+                }
+
                 OnExecute();
             }
         }
@@ -31,8 +33,10 @@ namespace FluentSchedule.R.Infrastructure
             {
                 _shuttingDown = true;
             }
+
             HostingEnvironment.UnregisterObject(this);
         }
+
         public abstract void OnExecute();
     }
 }

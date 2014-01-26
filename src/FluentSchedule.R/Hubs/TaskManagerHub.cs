@@ -13,7 +13,9 @@ namespace FluentSchedule.R.Hubs
             Schedule schedule = TaskManager.GetSchedule(scheduleName);
 
             if (schedule != null)
+            {
                 schedule.Execute();
+            }
         }
 
         public void DeleteTaskImmediately(string scheduleName)
@@ -23,7 +25,7 @@ namespace FluentSchedule.R.Hubs
             if (schedule != null)
             {
                 TaskManager.RemoveTask(scheduleName);
-                Clients.All.TaskRemoved(new {task = scheduleName});
+                Clients.All.TaskRemoved(new { task = scheduleName });
             }
         }
     }

@@ -5,9 +5,9 @@ namespace FluentSchedule.R.Infrastructure
 {
     public static class ScheduleExtensions
     {
-        public static TaskManagerPageModel ToPageModel(this Schedule[] schedules)
+        public static TasksViewModel ToPageModel(this Schedule[] schedules)
         {
-            var result = new TaskManagerPageModel();
+            var result = new TasksViewModel();
 
             foreach (Schedule schedule in schedules)
             {

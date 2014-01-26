@@ -1,14 +1,22 @@
 ﻿using FluentScheduler;
 
-namespace FluentSchedule.R.Dashboard.Infrastructure.Tasks {
-    public class TaskRegistry : Registry {
-        public TaskRegistry() {
+namespace FluentSchedule.R.Dashboard.Infrastructure.Tasks
+{
+    public class TaskRegistry : Registry
+    {
+        public TaskRegistry()
+        {
+            Schedule<BasicTask>().WithName(TaskNames.Sample)
+                .ToRunEvery(1)
+                .Minutes();
 
-            Schedule<SampleTask>().WithName(ScheduleNames.SampleSchedule)
-                .ToRunEvery(1).Minutes();
+            Schedule<HelloTask>().WithName(TaskNames.Hello)
+                .ToRunEvery(30)
+                .Seconds();
 
-            Schedule<HelloRealTimeTask>().WithName(ScheduleNames.HelloSchedule)
-                .ToRunEvery(30).Seconds();
+            Schedule<DoSomethingTask>().WithName(TaskNames.DoSomething)
+                .ToRunEvery(50)
+                .Seconds();
         }
     }
 }

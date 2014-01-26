@@ -1,4 +1,4 @@
-﻿namespace FluentSchedule.R
+﻿namespace FluentSchedule.R.Infrastructure
 {
     public class TrackOptions
     {

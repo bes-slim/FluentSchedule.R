@@ -2,9 +2,9 @@
 
 namespace FluentSchedule.R.Models
 {
-    public class TaskManagerPageModel
+    public class TasksViewModel
     {
-        public TaskManagerPageModel()
+        public TasksViewModel()
         {
             Schedules = new List<ScheduleModel>();
         }
