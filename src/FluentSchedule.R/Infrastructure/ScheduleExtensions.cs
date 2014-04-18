@@ -13,6 +13,7 @@ namespace FluentSchedule.R.Infrastructure
             {
                 result.Schedules.Add(schedule.ToTaskModel());
             }
+
             return result;
         }
 

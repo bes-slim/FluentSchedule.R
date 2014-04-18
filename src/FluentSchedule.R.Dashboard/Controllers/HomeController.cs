@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using FluentSchedule.R.Infrastructure;
 using FluentSchedule.R.Models;
 
 namespace FluentSchedule.R.Dashboard.Controllers

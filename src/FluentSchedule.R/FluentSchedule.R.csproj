@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Hubs\TaskManagerHub.cs" />
     <Compile Include="Infrastructure\ExecutionHandle.cs" />
+    <Compile Include="Infrastructure\IEditorInvisible.cs" />
+    <Compile Include="Infrastructure\IExecutionTrackable.cs" />
     <Compile Include="Infrastructure\IRealtimeTaskEngine.cs" />
     <Compile Include="Infrastructure\RealTimeTask.cs" />
     <Compile Include="Infrastructure\RealtimeTaskEngine.cs" />
