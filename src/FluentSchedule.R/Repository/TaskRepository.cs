@@ -1,7 +1,8 @@
 ﻿using FluentSchedule.R.Infrastructure;
+using FluentSchedule.R.Models;
 using FluentScheduler;
 
-namespace FluentSchedule.R.Models
+namespace FluentSchedule.R.Repository
 {
     public class TaskRepository : ITaskRepository
     {

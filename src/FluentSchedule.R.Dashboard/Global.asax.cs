@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Routing;
-using FluentScheduler;
+using FluentSchedule.R.Infrastructure;
 
 namespace FluentSchedule.R.Dashboard
 {
@@ -18,7 +18,7 @@ namespace FluentSchedule.R.Dashboard
 
         protected void Application_End(object sender, EventArgs e)
         {
-            TaskManager.Stop();
+            RealtimeTaskEngine.Stop();
         }
     }
 }

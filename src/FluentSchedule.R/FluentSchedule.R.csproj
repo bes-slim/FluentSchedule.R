@@ -71,11 +71,11 @@
     <Compile Include="Infrastructure\ScheduleExtensions.cs" />
     <Compile Include="Infrastructure\TaskBase.cs" />
     <Compile Include="Infrastructure\TrackOptions.cs" />
-    <Compile Include="Models\ITaskRepository.cs" />
     <Compile Include="Models\ScheduleModel.cs" />
-    <Compile Include="Models\TaskRepository.cs" />
     <Compile Include="Models\TasksViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ITaskRepository.cs" />
+    <Compile Include="Repository\TaskRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

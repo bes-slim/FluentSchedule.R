@@ -40,25 +40,25 @@ namespace FluentSchedule.R.Infrastructure
             return this;
         }
 
-        public IExecutionTrackable OnStart(TrackOptions options, Func<TaskStartScheduleInformation, object> messageMaker = null)
+        public IExecutionTrackable OnStart(TrackOptions options, Func<TaskStartScheduleInformation, object> messageBuilder = null)
         {
             _startOptions = options;
 
-            if (messageMaker != null)
+            if (messageBuilder != null)
             {
-                TaskManager.TaskStart += (sender, e) => HubContext.Clients.All.Invoke(_startOptions.HubMethod, messageMaker(sender));
+                TaskManager.TaskStart += (sender, e) => HubContext.Clients.All.Invoke(_startOptions.HubMethod, messageBuilder(sender));
             }
 
             return this;
         }
 
-        public IExecutionTrackable OnEnd(TrackOptions options, Func<TaskEndScheduleInformation, object> messageMaker = null)
+        public IExecutionTrackable OnEnd(TrackOptions options, Func<TaskEndScheduleInformation, object> messageBuilder = null)
         {
             _endOptions = options;
 
-            if (messageMaker != null)
+            if (messageBuilder != null)
             {
-                TaskManager.TaskEnd += (sender, e) => HubContext.Clients.All.Invoke(_endOptions.HubMethod, messageMaker(sender));
+                TaskManager.TaskEnd += (sender, e) => HubContext.Clients.All.Invoke(_endOptions.HubMethod, messageBuilder(sender));
             }
 
             return this;
@@ -72,6 +72,11 @@ namespace FluentSchedule.R.Infrastructure
         public void HandleErrorWith(GenericEventHandler<TaskExceptionInformation, UnhandledExceptionEventArgs> taskManagerUnobservedTaskException)
         {
             TaskManager.UnobservedTaskException += taskManagerUnobservedTaskException;
+        }
+
+        public static void Stop()
+        {
+            TaskManager.Stop();
         }
     }
 }

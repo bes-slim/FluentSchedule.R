@@ -28,7 +28,7 @@ namespace FluentSchedule.R.Dashboard
 
         public static void TaskManager_UnobservedTaskException(TaskExceptionInformation sender, UnhandledExceptionEventArgs e)
         {
-
+            //log
         }
     }
 }
